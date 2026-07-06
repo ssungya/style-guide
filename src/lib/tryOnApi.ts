@@ -1,4 +1,5 @@
 import type { StyleItem } from "../types";
+import { resizeImageDataUrl } from "./resizeImage";
 
 export class TryOnApiError extends Error {}
 
@@ -7,11 +8,15 @@ export async function requestRealTryOn(
   photoDataUrl: string,
   items: StyleItem[],
 ): Promise<string> {
+  // 원본 사진(수 MB)을 그대로 보내면 서버리스 함수의 요청 크기 제한에 걸릴 수 있어
+  // 전송 전에 축소한다.
+  const resizedPhoto = await resizeImageDataUrl(photoDataUrl);
+
   const res = await fetch("/api/tryon", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
-      photo: photoDataUrl,
+      photo: resizedPhoto,
       items: items.map((item) => ({
         name: item.name,
         description: item.description,
