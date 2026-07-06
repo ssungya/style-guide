@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #f2f5fb;
+  --surface: #ffffff;
+  --surface-muted: #e8edf8;
+  --text: #16213a;
+  --text-muted: #55607a;
+  --primary: #1428a0;
+  --primary-dark: #0d1b74;
+  --primary-contrast: #ffffff;
+  --accent: #3d6bf0;
+  --border: #cfd8ea;
+  --danger: #b3382c;
+  --danger-bg: #fbe9e6;
+  --focus-ring: #1428a0;
+}
+
+html.hc {
+  --bg: #000000;
+  --surface: #0a0a0a;
+  --surface-muted: #1a1a1a;
+  --text: #ffffff;
+  --text-muted: #f2f2f2;
+  --primary: #ffd400;
+  --primary-dark: #ffe45c;
+  --primary-contrast: #000000;
+  --accent: #00e5ff;
+  --border: #ffffff;
+  --danger: #ff6b6b;
+  --danger-bg: #3a0000;
+  --focus-ring: #ffd400;
+}
+
+html[data-font-scale="lg"] {
+  font-size: 118%;
+}
+html[data-font-scale="xl"] {
+  font-size: 136%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Pretendard", "Apple SD Gothic Neo", "Malgun Gothic", -apple-system,
+    sans-serif;
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+}
+
+:focus-visible {
+  outline: 3px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+
+.hc img {
+  filter: contrast(1.1);
+}
