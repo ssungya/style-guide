@@ -17,7 +17,7 @@ const CATEGORIES: Category[] = ["top", "bottom", "outer", "accessory"];
 
 export default function TryOnSelect() {
   const navigate = useNavigate();
-  const { diagnosisResult, selectedItemIds, toggleSelectedItem, consent, photos } =
+  const { diagnosisResult, selectedItemIds, toggleSelectedItem, consent, photos, basicInfo } =
     useSessionStore();
 
   useEffect(() => {
@@ -25,8 +25,9 @@ export default function TryOnSelect() {
   }, [diagnosisResult, navigate]);
 
   const items = useMemo(
-    () => (diagnosisResult ? getRecommendations(diagnosisResult.type) : []),
-    [diagnosisResult],
+    () =>
+      diagnosisResult ? getRecommendations(diagnosisResult.type, basicInfo.gender) : [],
+    [diagnosisResult, basicInfo.gender],
   );
 
   if (!diagnosisResult) return null;

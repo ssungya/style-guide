@@ -4,7 +4,10 @@
       "Bash(npm create *)",
       "Bash(yes \"\")",
       "Bash(npx create-vite@latest temp-app --template react-ts)",
-      "Bash(npm install *)"
+      "Bash(npm install *)",
+      "mcp__claude-in-chrome__computer",
+      "mcp__claude-in-chrome__navigate",
+      "Bash(pwd && cd \"C:\\\\Users\\\\영아\\\\OneDrive\\\\Desktop\\\\claude code\\\\style\" && pwd && ls *.mjs 2>&1)"
     ]
   }
 }

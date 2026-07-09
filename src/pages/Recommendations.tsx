@@ -30,11 +30,12 @@ export default function Recommendations() {
   const navigate = useNavigate();
   const diagnosisResult = useSessionStore((s) => s.diagnosisResult);
   const hasPhoto = useSessionStore((s) => !!s.photos.front);
+  const gender = useSessionStore((s) => s.basicInfo.gender);
   const [occasion, setOccasion] = useState<Occasion>("daily");
 
   const items = useMemo(
-    () => (diagnosisResult ? getRecommendations(diagnosisResult.type) : []),
-    [diagnosisResult],
+    () => (diagnosisResult ? getRecommendations(diagnosisResult.type, gender) : []),
+    [diagnosisResult, gender],
   );
 
   useEffect(() => {

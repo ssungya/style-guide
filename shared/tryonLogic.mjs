@@ -16,7 +16,6 @@ export function buildPrompt(items) {
         `소재: ${item.material}`,
       ];
       if (item.neckline) parts.push(`넥라인: ${item.neckline}`);
-      if (item.color) parts.push(`대표 색상: ${item.color}`);
       return parts.join(", ");
     })
     .join("\n");

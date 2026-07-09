@@ -17,13 +17,14 @@ export async function requestRealTryOn(
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
       photo: resizedPhoto,
+      // item.color는 진단 타입별 UI 아이콘 강조색일 뿐 실제 옷 색상이 아니므로
+      // Gemini 프롬프트에는 보내지 않는다 (모든 옷이 같은 색으로 나오는 원인이었음).
       items: items.map((item) => ({
         name: item.name,
         description: item.description,
         fit: item.fit,
         material: item.material,
         neckline: item.neckline,
-        color: item.color,
         category: item.category,
       })),
     }),

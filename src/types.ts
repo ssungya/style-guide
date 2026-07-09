@@ -65,6 +65,7 @@ export interface StyleItem {
   bodyType: BodyType;
   category: Category;
   occasion: Occasion;
+  gender: "male" | "female" | "unisex";
   name: string;
   description: string;
   fit: string;
