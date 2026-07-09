@@ -7,7 +7,12 @@
       "Bash(npm install *)",
       "mcp__claude-in-chrome__computer",
       "mcp__claude-in-chrome__navigate",
-      "Bash(pwd && cd \"C:\\\\Users\\\\영아\\\\OneDrive\\\\Desktop\\\\claude code\\\\style\" && pwd && ls *.mjs 2>&1)"
+      "Bash(pwd && cd \"C:\\\\Users\\\\영아\\\\OneDrive\\\\Desktop\\\\claude code\\\\style\" && pwd && ls *.mjs 2>&1)",
+      "Bash(vercel --version)",
+      "Bash(vercel whoami *)",
+      "Bash(mkdir -p \"/c/Users/영아/OneDrive/Desktop/바이브실습폴더들/men-style-guide\")",
+      "Bash(cp \"/c/Users/영아/OneDrive/Desktop/바이브실습폴더들/claude code/style/style-guide-men.html\" \"/c/Users/영아/OneDrive/Desktop/바이브실습폴더들/men-style-guide/index.html\")",
+      "Read(//c/Users/영아/OneDrive/Desktop/바이브실습폴더들/**)"
     ]
   }
 }
